@@ -52,7 +52,7 @@ public class Dialogue : MonoBehaviour
 
         public Choices(
             string speaker_name = "Default_Speaker",
-            string contents = "There's nothing here... make a choice.",
+            string contents = "There's nothing here.",
             List<Tuple<string, DialogueSection>> choices = null)
         {
             this.speaker_name = speaker_name;
