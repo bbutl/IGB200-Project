@@ -8,7 +8,7 @@ public class Joe : MonoBehaviour
 {
     private void Start()
     {
-        FindObjectOfType<DialogueManager>().StartDialogue(Conversation());
+        //FindObjectOfType<DialogueManager>().StartDialogue(Conversation());
     }
 
     private DialogueSection Conversation()
