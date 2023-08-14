@@ -15,7 +15,7 @@ public class DialogueOptionDisplay : MonoBehaviour
     {
         manager = FindObjectOfType<DialogueManager>();
     }
-
+    // Display text contents on TMPro GUI
     public void SetDisplay(string optionText, DialogueSection nextDialogueSection)
     {
         contentText.text = optionText;
