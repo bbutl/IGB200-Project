@@ -107,9 +107,11 @@ public class DialogueManager : MonoBehaviour
         optionsBeenDisplayed = false;
 
         nameText.text = $"{currentSection.GetSpeakerName()}:";
-
+        
         contentsText.text = currentSection.GetSpeechContents();
     }
+    
+    
 
     private void EndDialogue()
     {
