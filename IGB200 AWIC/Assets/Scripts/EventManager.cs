@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EventManager : MonoBehaviour
 {
+    public List<string> avaliableOccupations;
+    GameObject character;
     // Start is called before the first frame update
     void Start()
     {
