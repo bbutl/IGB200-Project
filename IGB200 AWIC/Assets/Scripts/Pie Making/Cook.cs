@@ -8,7 +8,15 @@ public class Cook : MonoBehaviour
     public Ingredient ingredient;
     public Pie pie;
     public GameObject pieObject;
-    
+    public GameObject cookingArea;
+    public GameObject pieBase;
+    public GameObject pieFilling;
+    public GameObject pieTop;
+    private GameObject currBase;
+    private GameObject currFilling;
+    private GameObject currTop;
+
+    private Vector3 offset = new Vector3(0f, 2f, 0f);
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +30,9 @@ public class Cook : MonoBehaviour
        if(PieCompleted())
         {
             Debug.Log("Complete");
-            Instantiate(pieObject, this.transform);
+            Destroy(currBase);
+            Destroy(currFilling);
+            Instantiate(pieObject, cookingArea.transform.position + offset, Quaternion.identity);
             pie.pbase = "Default";
             pie.filling = "Default"; 
             pie.top = "Default";
@@ -62,6 +72,7 @@ public class Cook : MonoBehaviour
                     {
                         pie.pbase = ingredient.name; 
                         Debug.Log($"New Base : {pie.pbase}");
+                       currBase =  Instantiate(pieBase, cookingArea.transform.position + offset, Quaternion.identity);
                     }
 
                     break;
@@ -78,7 +89,8 @@ public class Cook : MonoBehaviour
                     {
                         pie.filling = ingredient.name;
                         Debug.Log($"New Filling : {pie.filling}");
-                    }
+                        currFilling = Instantiate(pieFilling, cookingArea.transform.position + offset, Quaternion.identity);
+                }
                     else
                     {
                         Debug.Log("Add a base first");
