@@ -27,7 +27,7 @@ public class Sarah : MonoBehaviour
         Monologue bad = new Monologue(localName, "Sorry to hear that.", d);
         
         
-        Choices b = new Choices(localName, "How are you today?", ChoiceList(Choice("Fine", fine), Choice("Not so fine...", not_fine), Choice("Bad", bad)));
+        Choices b = new Choices(localName, "How are you today?", ChoiceList(Choice("Fine", fine), Choice("Not so fine...", not_fine)));
         
         Monologue a = new Monologue(localName, $"Good morning, I'm {localName}.", b);
         
